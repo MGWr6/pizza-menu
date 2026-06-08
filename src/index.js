@@ -82,6 +82,7 @@ function Menu() {
       <h2>Our menu</h2>
 
       {numPizzas > 0 ? (
+        // <React.Fragment key={}>
         <>
           <p>
             Authentic Italian cuisine. 6 creative dishes to choose from. All

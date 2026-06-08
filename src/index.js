@@ -73,12 +73,23 @@ function Header() {
 }
 
 function Menu() {
+  const pizzas = pizzaData;
+  const numPizzas = pizzas.length;
+
   return (
     <main className="menu">
       <h2>Our menu</h2>
 
-      <ul className="pizzas">
-        {pizzaData.map((pizza) => (
+      {numPizzas > 0 && (
+        <ul className="pizzas">
+          {pizzas.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.name} />
+          ))}
+        </ul>
+      )}
+
+      {/* <ul className="pizzas">
+        {pizzas.map((pizza) => (
           <Pizza pizzaObj={pizza} key={pizza.name} />
 
           // <Pizza
@@ -88,7 +99,7 @@ function Menu() {
           // />
           // *** This is not the ideal way to do this -> instead, bring the whole object into the more specific component and then inside of that component we take out the information we want from that object.
         ))}
-      </ul>
+      </ul> */}
 
       {/* <Pizza
         name="Pizza Spinachi"
@@ -135,7 +146,14 @@ function Footer() {
 
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()}. We're currently open!
+      {/* Conditional rendering / short-circuiting with the && operator */}
+      {isOpen && (
+        <div className="order">
+          <p>We're open until {closeHour}:00. Come visit us or order online.</p>
+          <button className="btn">Order Now</button>
+        </div>
+      )}
+      {/* {new Date().toLocaleTimeString()}. We're currently open! */}
     </footer>
   );
   // return React.createElement("footer", null, "We're currently open!");

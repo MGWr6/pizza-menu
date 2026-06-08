@@ -49,7 +49,7 @@ const pizzaData = [
 
 function App() {
   return (
-    <div className="container">
+    <div className="container error">
       <Header />
       <Menu />
       <Footer />

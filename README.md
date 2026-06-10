@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+## What I Learned
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project helped me build a stronger foundation in React by creating a small pizza menu application using components, props, JSX, conditional rendering, and JavaScript array methods.
 
-## Available Scripts
+### Component-Based UI
 
-In the project directory, you can run:
+React applications are built using components, which are reusable, self-contained pieces of the user interface. In this project, I separated the UI into multiple components, including:
 
-### `npm start`
+- `App`
+- `Header`
+- `Menu`
+- `Pizza`
+- `Footer`
+- `Order`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This helped me understand how a complete application can be broken down into smaller pieces that are easier to read, maintain, and reuse.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### JSX and Declarative Rendering
 
-### `npm test`
+I learned how JSX allows React components to describe what the UI should look like. JSX looks similar to HTML, but it also allows JavaScript expressions to be used inside curly braces.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For example, this project uses JSX to render pizza names, ingredients, prices, images, and sold-out states directly from JavaScript data.
 
-### `npm run build`
+This helped me understand React’s declarative approach: instead of manually telling the browser how to update the UI step by step, I describe what the UI should look like based on the current data.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Props and One-Way Data Flow
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I learned how props are used to pass data from parent components to child components.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In this application, the `Menu` component loops through an array of pizza objects and passes each pizza object into the `Pizza` component as a prop. This allowed me to reuse one `Pizza` component to render multiple different pizzas.
 
-### `npm run eject`
+This also helped reinforce one of React’s most important concepts: data flows down the component tree. Parent components can pass data to child components, but child components should not directly modify the props they receive.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Rendering Lists with `.map()`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project helped me practice rendering lists in React using JavaScript’s `.map()` method.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The pizza menu is created by looping over the `pizzaData` array and returning a `Pizza` component for each pizza object. I also learned why React requires a unique `key` prop when rendering lists, so React can efficiently track and update each item.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Conditional Rendering
 
-## Learn More
+I learned how to conditionally render different UI based on application data.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project includes several examples of conditional rendering, such as:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Displaying a message when there are no pizzas available.
+- Showing `"SOLD OUT"` instead of the pizza price when a pizza is unavailable.
+- Applying a different CSS class to sold-out pizzas.
+- Displaying an order message only when the restaurant is open.
 
-### Code Splitting
+### Styling and Dynamic Classes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+I practiced applying CSS classes in React, including dynamic class names based on component data.
 
-### Analyzing the Bundle Size
+For example, sold-out pizzas receive an additional `sold-out` class, which allows the UI to visually communicate that the item is unavailable.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### React 18 Rendering and Strict Mode
 
-### Making a Progressive Web App
+I learned how React 18 uses `ReactDOM.createRoot()` to render the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I also used `React.StrictMode`, which helps identify potential issues during development by intentionally running certain checks more than once.
 
-### Advanced Configuration
+### Additional Concepts Reinforced
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project also helped me better understand several foundational React concepts, including:
 
-### Deployment
+- The difference between imperative and declarative programming.
+- Why React components should remain pure when possible.
+- Why props should not be mutated.
+- How to think in terms of reusable UI components.
+- How data, JavaScript logic, and JSX work together inside a React component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Overall, this project gave me hands-on practice with the core building blocks of React and helped me better understand how React applications are structured.
